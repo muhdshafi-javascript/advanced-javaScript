@@ -21,7 +21,7 @@
 - **Prototype Chain**: when a certain property/method is called, the search starts from the current object itself, if not found, then search in it's prototype, if still not found search in it's prototype and so on until reaches the object *Object*, if not found even on *Object* return undefined.
 ## Object Contructor Function
 - Constructor funation is away to create the blue print for objects(OOP), we can create instances of this type by using the **new** keyword with Constructor.
-- The **this** variable is not pointing to the global object but to the new empty objecthas been created by invoking the **new**.
+- The **this** variable is not pointing to the global object but to the new empty object that has been created by invoking the **new**.
 ```javascript
     function Person(name, age) {
         this.name = name;
@@ -32,4 +32,32 @@
     console.log('typeof: ', typeof shafi);//object
     console.log('instanceof:', shafi instanceof Person);//true
     console.log('name:', shafi.name);
+```
+## Prototype vs non-prototype
+```javascript
+    //without prototype
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.printAge = function(){
+            console.log(this.name + '\'s age is: ',this.age);
+        }
+
+    }
+    var shafi = new Person("Shafi", 31);
+    shafi.printAge();                               //Shafi's age is:  31
+    console.log('shafi object:', shafi);            //shafi object: Person {name: "Shafi", age: 31, printAge: ƒ}
+
+    //with prototype
+    var Employee =  function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Employee.prototype.printAge = function(){
+        console.log(this.name + '\'s age is: ',this.age);
+    }
+
+    var sudheesh = new Employee('Sudheesh', 32);
+    sudheesh.printAge();                             //Sudheesh's age is:  32
+    console.log('sudheesh object:', sudheesh);       //sudheesh object: Employee {name: "Sudheesh", age: 32}     
 ```
