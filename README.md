@@ -28,6 +28,6 @@
     }
     var shafi = new Person("Shafi", 31);
     var sudheesh = new Person("Sudheesh", 32);
-    console.log('typeof: ', typeof shafi);
-    console.log('instanceof:', shafi instanceof Person);
+    console.log('typeof: ', typeof shafi);//object
+    console.log('instanceof:', shafi instanceof Person);//true
 ```
