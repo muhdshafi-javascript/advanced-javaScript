@@ -71,3 +71,4 @@ https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript
 ( new Foo ).__proto__ === Foo.prototype;
 ( new Foo ).prototype === undefined;
 ```
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
