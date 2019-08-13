@@ -70,7 +70,15 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
 - prototype is the object that is used to build __proto__ when you create an object with *new*.  
 
 ```javascript
-( new Foo ).__proto__ === Foo.prototype;
-( new Foo ).prototype === undefined;
+    console.log('Employee.prototype: ',Employee.prototype);  //exists
+    console.log('sudheesh.prototype: ', sudheesh.prototype); //undefined
+    var o = {}
+    var obj = new Object();
+    var f = new Function();
+    console.log('o.prototype',o.prototype);                 //undefined
+    console.log('obj.prototype',obj.prototype);             //undefined
+    console.log('f.prototype',f.prototype);                 //exists
+    console.log('Object.prototype',Object.prototype);       //exists
+    console.log('Function.prototype',Function.prototype);   //exists
 ```
 ![Prototype vs __proto__](https://github.com/muhdshafi-javascript/advanced-javaScript/blob/master/proto.png)
