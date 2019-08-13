@@ -82,3 +82,6 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
     console.log('Function.prototype',Function.prototype);   //exists
 ```
 ![Prototype vs __proto__](https://github.com/muhdshafi-javascript/advanced-javaScript/blob/master/proto.png)
+
+## TODO
+- Object.create() vs new()
