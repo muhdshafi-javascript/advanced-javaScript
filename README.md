@@ -61,3 +61,12 @@
     sudheesh.printAge();                             //Sudheesh's age is:  32
     console.log('sudheesh object:', sudheesh);       //sudheesh object: Employee {name: "Sudheesh", age: 32}     
 ```
+- using Prototypes we can define methods to all instances of a particular object, the methods applied to the prototype are not attached directly to all the object, it is stores in the memory only once, but every object can access it. 
+## __proto__ vs prototype
+https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript
+- __proto__ is the actual object that is used in the lookup chain to resolve methods.
+- prototype is the object that is used to build __proto__ when you create an object with new
+        ```javascript
+        ( new Foo ).__proto__ === Foo.prototype;
+        ( new Foo ).prototype === undefined;
+        ```
