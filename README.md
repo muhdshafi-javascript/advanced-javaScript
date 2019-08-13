@@ -71,4 +71,4 @@ https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript
 ( new Foo ).__proto__ === Foo.prototype;
 ( new Foo ).prototype === undefined;
 ```
-![Prototype vs __proto__](https://github.com/muhdshafi-javascript/advanced-javaScript/proto.png)
+![Prototype vs __proto__](https://github.com/muhdshafi-javascript/advanced-javaScript/blob/master/proto.png)
