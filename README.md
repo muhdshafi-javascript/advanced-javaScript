@@ -21,6 +21,7 @@
 - **Prototype Chain**: when a certain property/method is called, the search starts from the current object itself, if not found, then search in it's prototype, if still not found search in it's prototype and so on until reaches the object *Object*, if not found even on *Object* return undefined.
 ## Object Contructor Function
 - Constructor funation is away to create the blue print for objects(OOP), we can create instances of this type by using the **new** keyword with Constructor.
+- The **this** variable is not pointing to the global object but to the new empty objecthas been created by invoking the **new**.
 ```javascript
     function Person(name, age) {
         this.name = name;
@@ -30,4 +31,5 @@
     var sudheesh = new Person("Sudheesh", 32);
     console.log('typeof: ', typeof shafi);//object
     console.log('instanceof:', shafi instanceof Person);//true
+    console.log('name:', shafi.name);
 ```
