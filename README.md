@@ -187,5 +187,9 @@ window.$ = function somethingElse() {
   // ...
 })(this);
 ```  
+## call, apply and bind?
+- call() and apply() - method borrowing  
+- bind() - create a bound funtion & preset args
+
 ## TODO clone Objects?
 
