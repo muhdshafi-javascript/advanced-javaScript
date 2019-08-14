@@ -83,5 +83,46 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
 ```
 ![Prototype vs __proto__](https://github.com/muhdshafi-javascript/advanced-javaScript/blob/master/proto.png)
 
-## TODO
-- Object.create() vs new()
+## Object.create() vs new()
+- when use constructor funtion, a new object will be created and the constructor function's prototype will set as the proto for the new object.  
+- when use Object.create(), a new object will be created and the provided prototype object will be set as the proto for the newly created object.
+- when use Object.create(), other properties of the object have to be set explicitly or pass it as the 2nd argument in the required format.
+
+```javascript
+    //new()
+    var Employee =  function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Employee.prototype.printAge = function(){
+        console.log(this.name + '\'s age is: ',this.age);
+    }
+
+    //instace
+    var shafi = new Employee('Shafi', 31);
+    console.log('shafi:',shafi);
+    shafi.printAge();
+
+    //Object.create()
+    var empPrototype = {
+        printAge: function(){
+            console.log(this.name + '\'s age is: ',this.age);
+        }
+    };
+
+    //instance - syntax-1
+    var sudheesh = Object.create(empPrototype);
+    sudheesh.name = 'Sudheesh';
+    sudheesh.age = 32;
+    console.log('sudheesh:',sudheesh);
+    sudheesh.printAge();
+
+    //instance - syntax-2
+    var vineesh = Object.create(empPrototype, {
+        name: {value: 'Vineesh'},
+        age: {value: 31}
+    });
+    console.log('vineesh:',vineesh);
+    vineesh.printAge();
+```
+
