@@ -126,3 +126,30 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
     vineesh.printAge();
 ```
 
+## IIFE(Immediately Invoked Function Expression) 
+https://mariusschulz.com/blog/disassembling-javascripts-iife-syntax  
+https://mariusschulz.com/blog/use-cases-for-javascripts-iifes  
+
+- An Immediately-invoked Function Expression is a way to execute functions immediately, as soon as they are created. IIFEs are very useful because they don't pollute the global object, and they are a simple way to isolate variables declarations.  
+**Uses cases**:  
+- To achieve blocked scope in ES5  
+```javascript
+(function() {
+  var foo = "bar";
+  console.log(foo);
+})();
+
+foo; // ReferenceError: foo is not defined
+
+{
+  let foo = "bar";
+  console.log(foo);
+}
+
+foo; // ReferenceError: foo is not defined
+```  
+- 
+
+
+## TODO clone Objects?
+
