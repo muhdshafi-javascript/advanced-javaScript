@@ -98,7 +98,7 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
         console.log(this.name + '\'s age is: ',this.age);
     }
 
-    //instace
+    //instance
     var shafi = new Employee('Shafi', 31);
     console.log('shafi:',shafi);
     shafi.printAge();
