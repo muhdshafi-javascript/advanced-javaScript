@@ -181,7 +181,7 @@ window.$ = function somethingElse() {
   // ...
 })(jQuery);
 ```  
-- Capturing the Global Object  
+- Capturing the Global Object :  for example to capture the global object in both browser(*window*) and Node environment(*global*)
 ```javascript
 (function(global) {
   // ...
