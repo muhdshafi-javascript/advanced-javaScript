@@ -148,8 +148,44 @@ foo; // ReferenceError: foo is not defined
 
 foo; // ReferenceError: foo is not defined
 ```  
-- 
+- To implement module pattern
+```javascript
+const counter = (function() {
+  let counterValue = 0;
 
+  return {
+    increment() {
+      ++counterValue;
+    },
 
+    get value() {
+      return counterValue;
+    }
+  };
+})();
+
+counter.increment();
+console.log(counter.value); // 1
+
+counter.increment();
+counter.increment();
+console.log(counter.value); // 3
+```  
+- Aliasing Variables  
+```javascript
+window.$ = function somethingElse() {
+  // ...
+};
+
+(function($) {
+  // ...
+})(jQuery);
+```  
+- Capturing the Global Object  
+```javascript
+(function(global) {
+  // ...
+})(this);
+```  
 ## TODO clone Objects?
 
