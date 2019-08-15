@@ -188,8 +188,48 @@ window.$ = function somethingElse() {
 })(this);
 ```  
 ## call, apply and bind?
-- call() and apply() - method borrowing  
+- call() and apply() are used for method borrowing, to invoke a method of an object on another object without duplicating it in both of the objects.  
+- both *call* and *apply* takes the first argument for binding the *this*.  
+- *call* takes arguments as susequent values, on the other hand *apply* takse the arguments as an array, which is the 2bd argument to *apply*, later *apply* unpack it and pass to the invoked method.
+- *apply* is useful when you want to write code that doesn't (or shouldn't) know the number of arguments that the functions need, like a dispatcher.  
 - bind() - create a bound funtion & preset args
 
+```javascript
+   var shafi = {
+        name: 'Shafi',
+        saySomething: function (greet, to) {
+            console.log(this.name + ' Says ' + greet + ' to ' + to);
+        }
+    }
+    shafi.saySomething('Good morning', 'Midhun');
+    shafi.saySomething('Good morning', 'Paul');
+    
+    shameer = {
+        name: 'Shameer',
+        eatSomething: function (food) {
+            console.log(this.name + ' is eating ' + food);
+        }
+    }
+    shameer.eatSomething('chicken');
+
+    //Method borrowing with call()
+    shafi.saySomething.call(shameer, 'Good evening', 'Sandeep');
+
+    //Method borrowing with apply()
+    shafi.saySomething.apply(shameer, ['Good night', 'Chaathan']);
+
+    //bound funtion with bind()
+    var saySomethingDup = shafi.saySomething.bind(shameer);
+    saySomethingDup('Good Morning', 'Vineesh');
+
+    //preset arg with bind()
+    var sayGoodNight = shafi.saySomething.bind(shameer, 'Good night');
+    sayGoodNight('Shafi');
+    sayGoodNight( 'Good afternoon', 'Shafi');//here 'Shafi' becomes 3rd arg
+```  
+- Dispatch demo, where *apply* is useful over *call*
+```javascript
+
+```  
 ## TODO clone Objects?
 
