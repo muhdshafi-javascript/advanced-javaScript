@@ -229,7 +229,23 @@ window.$ = function somethingElse() {
 ```  
 - Dispatch demo, where *apply* is useful over *call*
 ```javascript
+    var greet = function (name) {
+        console.log(this.name + ' says, Hello ', name);
+    }
+    var conveyMsg = function (from, msg) {
+        console.log(this.name + ' conveys that ' + from + ' says "' + msg +'"');
+    }
+    var person = {
+        name : 'Shafi'
+    };
 
+
+    var dispatch = function (person, method, args) {
+        method.apply(person, args);
+    };
+
+    dispatch(person, greet, ['Vineesh']);
+    dispatch(person, conveyMsg, ['Shameer', 'Happy Birthday']);
 ```  
 ## TODO clone Objects?
 
