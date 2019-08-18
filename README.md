@@ -85,7 +85,7 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
 
 ## Object.create() vs new()
 - when use constructor funtion, a new object will be be created and the constructor function's prototype will set as the proto for the new object, also the constructor function's prototypes contains a *constructor* property by default which point to the function constructor itself.
-- *Constructor correction: * In ES5 and earlier, JavaScript itself didn't use constructor for anything. It defined that the default object on a function's  prototype property would have it and that it would refer back to the function, and that was it. That changed in ES2015 (ES6), which started using it in relation to inheritance hierarchies. It is a good idea to correct the constructor when subclasisng.
+- *Constructor correction: *  In ES5 and earlier, JavaScript itself didn't use constructor for anything. It defined that the default object on a function's  prototype property would have it and that it would refer back to the function, and that was it. That changed in ES2015 (ES6), which started using it in relation to inheritance hierarchies. It is a good idea to correct the constructor when subclasisng.
 other wise the subclass will have the prototype.constructor points to it's parent class constructor function.
 ```javascript
 // when subclassing
