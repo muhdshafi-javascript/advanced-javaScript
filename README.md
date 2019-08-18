@@ -87,6 +87,8 @@ http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
 - when use constructor funtion, a new object will be be created and the constructor function's prototype will set as the proto for the new object, also the constructor function's prototypes contains a *constructor* property by default which point to the funtion constructor itself.
 - when use Object.create(), a new object will be created and the provided prototype object will be set as the proto for the newly created object.
 - when use Object.create(), other properties of the object have to be set explicitly or pass it as the 2nd argument in the required format.
+- All objects (with the exception of objects created with Object.create()) will have a constructor property.  
+- 
 
 ```javascript
     //new()
