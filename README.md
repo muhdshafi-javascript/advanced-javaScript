@@ -92,6 +92,8 @@ other wise the subclass will have the prototype.constructor points to it's paren
 Student.prototype = Object.create(Person.prototype);
 //do this
 Student.prototype.constructor = Student;
+//when use class it is not required, it is handled for us.
+class Student extends Person {}
 ```
 - 
 - when use Object.create(), a new object will be created and the provided prototype object will be set as the proto for the newly created object.
